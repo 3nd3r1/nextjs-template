@@ -1,6 +1,6 @@
-type SiteConfig = {
-}
-export const siteConfig = {
+import type { SiteConfig } from "@/validators/config";
+
+export const siteConfig: SiteConfig = {
     // Basic info - UPDATE THESE
     name: "My App",
     shortName: "App",
@@ -19,15 +19,9 @@ export const siteConfig = {
         url: "https://yoursite.com",
     },
 
-    // Social/SEO images - UPDATE THESE
-    ogImage: "/og-image.png",
-    twitterImage: "/twitter-image.png",
-
     // Keywords for SEO - UPDATE THESE
     keywords: ["keyword1", "keyword2", "keyword3"],
 
     // App category - UPDATE THIS
     category: "technology",
 };
-
-export type SiteConfig = typeof siteConfig;
