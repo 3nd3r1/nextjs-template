@@ -10,12 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "monthly",
             priority: 1,
         },
-        // Add more pages here as your app grows
-        // {
-        //     url: `${siteConfig.url}/about`,
-        //     lastModified: new Date(),
-        //     changeFrequency: "monthly",
-        //     priority: 0.8,
-        // },
+        {
+            url: `${siteConfig.url}/about`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
     ];
 }
