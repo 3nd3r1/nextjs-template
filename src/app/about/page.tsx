@@ -58,9 +58,7 @@ tests/
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div>
-                            <p className="font-medium">
-                                1. Update site config
-                            </p>
+                            <p className="font-medium">1. Update site config</p>
                             <p className="text-sm text-muted-foreground">
                                 Edit{" "}
                                 <code className="rounded bg-muted px-1">
