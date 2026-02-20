@@ -15,7 +15,7 @@ export default function Home() {
             <div className="mx-auto max-w-4xl space-y-8">
                 <div className="space-y-2 text-center">
                     <h1 className="text-4xl font-bold tracking-tight">
-                        Ender Template
+                        Ender - Next.js Template
                     </h1>
                     <p className="text-muted-foreground">
                         A minimal Next.js starter with React 19, Tailwind CSS 4,
@@ -91,7 +91,7 @@ export default function Home() {
                     </Button>
                     <Button variant="outline" asChild>
                         <a
-                            href="https://github.com"
+                            href="https://github.com/3nd3r1/nextjs-template"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
