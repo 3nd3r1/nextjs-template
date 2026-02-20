@@ -28,14 +28,14 @@ export default function Home() {
                         <CardHeader>
                             <CardTitle>Stack</CardTitle>
                             <CardDescription>
-                                Modern tools for modern apps
+                                All dependencies kept at latest versions
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-2 text-sm">
-                            <p>Next.js 16 with App Router</p>
-                            <p>React 19 with Server Components</p>
-                            <p>Tailwind CSS 4</p>
-                            <p>TypeScript 5</p>
+                            <p>Next.js with App Router</p>
+                            <p>React with Server Components</p>
+                            <p>Tailwind CSS</p>
+                            <p>TypeScript</p>
                         </CardContent>
                     </Card>
 
@@ -62,7 +62,7 @@ export default function Home() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-2 text-sm">
-                            <p>ESLint 9 with Next.js config</p>
+                            <p>ESLint with Next.js config</p>
                             <p>Prettier with import sorting</p>
                             <p>Zod for validation</p>
                             <p>Path aliases (@/)</p>

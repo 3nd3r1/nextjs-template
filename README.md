@@ -4,16 +4,16 @@ A minimal Next.js starter with React 19, Tailwind CSS 4, and shadcn/ui.
 
 ## Stack
 
-| Package      | Version |
-| ------------ | ------- |
-| Next.js      | 16.1.6  |
-| React        | 19.2.3  |
-| TypeScript   | 5.x     |
-| Tailwind CSS | 4.x     |
-| shadcn/ui    | 3.8.5   |
-| Vitest       | 4.x     |
-| ESLint       | 9.x     |
-| Prettier     | 3.x     |
+All dependencies are kept at latest versions.
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Vitest
+- ESLint
+- Prettier
 
 ## Scripts
 
