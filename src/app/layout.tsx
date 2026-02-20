@@ -3,6 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { siteConfig } from "@/lib/config";
 
+import { Toaster } from "@/components/ui/sonner";
+
+import MainNavbar from "@/components/common/layouts/main-navbar";
+import ThemeProvider from "@/components/common/layouts/theme-provider";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -66,7 +71,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang={siteConfig.language}>
+        <html lang={siteConfig.language} suppressHydrationWarning>
             <head>
                 <script
                     type="application/ld+json"
@@ -76,9 +81,20 @@ export default function RootLayout({
                 />
             </head>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                {children}
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="dark"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <div>
+                        <MainNavbar />
+                        {children}
+                    </div>
+                    <Toaster />
+                </ThemeProvider>
             </body>
         </html>
     );
