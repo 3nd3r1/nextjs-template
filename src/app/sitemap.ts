@@ -1,12 +1,21 @@
 import type { MetadataRoute } from "next";
 
-export default function robots(): MetadataRoute.Robots {
-    return {
-        rules: {
-            userAgent: "*",
-            allow: "/",
-            disallow: ["/api/", "/_next/", "/admin/"],
+import { siteConfig } from "@/lib/config";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+    return [
+        {
+            url: siteConfig.url,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 1,
         },
-        sitemap: "https://timescaledb-tune.host.ender.fi/sitemap.xml",
-    };
+        // Add more pages here as your app grows
+        // {
+        //     url: `${siteConfig.url}/about`,
+        //     lastModified: new Date(),
+        //     changeFrequency: "monthly",
+        //     priority: 0.8,
+        // },
+    ];
 }

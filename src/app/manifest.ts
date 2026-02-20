@@ -1,36 +1,32 @@
 import type { MetadataRoute } from "next";
 
+import { siteConfig } from "@/lib/config";
+
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "TimescaleDB Tuner",
-        short_name: "DB Tuner",
-        description:
-            "Optimize your TimescaleDB configuration for better performance",
+        name: siteConfig.name,
+        short_name: siteConfig.shortName,
+        description: siteConfig.description,
         start_url: "/",
         display: "standalone",
-        background_color: "#000000",
-        theme_color: "#000000",
-        orientation: "portrait-primary",
+        background_color: siteConfig.backgroundColor,
+        theme_color: siteConfig.themeColor,
         icons: [
             {
                 src: "/favicon.ico",
-                sizes: "16x16 32x32 48x48",
+                sizes: "48x48",
                 type: "image/x-icon",
             },
             {
                 src: "/icon-192.png",
                 sizes: "192x192",
                 type: "image/png",
-                purpose: "maskable",
             },
             {
                 src: "/icon-512.png",
                 sizes: "512x512",
                 type: "image/png",
-                purpose: "maskable",
             },
         ],
-        categories: ["productivity", "utilities", "developer"],
-        lang: "en",
     };
 }
