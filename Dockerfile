@@ -1,26 +1,19 @@
-FROM node:20-alpine as base
+FROM node:20-alpine AS base
+WORKDIR /app
+
+FROM base AS builder
 WORKDIR /app
 COPY package*.json ./
-EXPOSE 80
-
-FROM base as builder
-
-WORKDIR /app
-
+RUN npm ci --fetch-retries=5 --fetch-timeout=300000
 COPY . .
+RUN npm run build
 
-RUN npm ci && npm run build
-
-FROM base as production
-
+FROM base AS production
 WORKDIR /app
-
 RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
 USER nextjs
-
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/public ./public
-
-CMD npm start
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+EXPOSE 3000
+CMD ["node", "server.js"]
