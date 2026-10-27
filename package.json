@@ -33,7 +33,7 @@
         "minimatch": "^10.2.3"
     },
     "devDependencies": {
-        "@tailwindcss/postcss": "^4.3.3",
+        "@tailwindcss/turbopack": "^4.3.3",
         "@testing-library/jest-dom": "^7.0.1",
         "@testing-library/react": "^16.3.3",
         "@trivago/prettier-plugin-sort-imports": "^6.0.2",
