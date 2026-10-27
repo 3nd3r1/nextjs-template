@@ -69,7 +69,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     return (
         <html
             lang={siteConfig.language}
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
             suppressHydrationWarning
         >
             <head>
@@ -80,14 +80,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                     }}
                 />
             </head>
-            <body>
+            <body className="flex min-h-full flex-col">
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="dark"
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <div>
+                    <div className="flex flex-1 flex-col">
                         <MainNavbar />
                         {children}
                     </div>

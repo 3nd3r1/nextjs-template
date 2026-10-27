@@ -11,7 +11,7 @@ import {
 
 export default function Home() {
     return (
-        <main className="min-h-screen bg-background p-8">
+        <main className="flex-1 bg-background p-8">
             <div className="mx-auto max-w-4xl space-y-8">
                 <div className="space-y-2 text-center">
                     <h1 className="text-4xl font-bold tracking-tight">
