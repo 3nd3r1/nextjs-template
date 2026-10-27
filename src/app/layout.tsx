@@ -11,12 +11,12 @@ import ThemeProvider from "@/components/common/layouts/theme-provider";
 import "./globals.css";
 
 const geistSans = Geist({
-    variable: "--font-geist-sans",
+    variable: "--font-sans",
     subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+    variable: "--font-mono",
     subsets: ["latin"],
 });
 
@@ -65,13 +65,13 @@ const structuredData = {
     },
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
     return (
-        <html lang={siteConfig.language} suppressHydrationWarning>
+        <html
+            lang={siteConfig.language}
+            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+            suppressHydrationWarning
+        >
             <head>
                 <script
                     type="application/ld+json"
@@ -80,16 +80,14 @@ export default function RootLayout({
                     }}
                 />
             </head>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+            <body className="flex min-h-full flex-col">
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="dark"
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <div>
+                    <div className="flex flex-1 flex-col">
                         <MainNavbar />
                         {children}
                     </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function About() {
     return (
-        <main className="min-h-screen bg-background p-8">
+        <main className="flex-1 bg-background p-8">
             <div className="mx-auto max-w-4xl space-y-8">
                 <div className="space-y-2">
                     <h1 className="text-4xl font-bold tracking-tight">
@@ -149,9 +149,9 @@ tests/
                     </CardContent>
                 </Card>
 
-                <Button asChild>
-                    <Link href="/">Back to Home</Link>
-                </Button>
+                <Link href="/" className={buttonVariants()}>
+                    Back to Home
+                </Link>
             </div>
         </main>
     );
