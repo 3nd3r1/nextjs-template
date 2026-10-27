@@ -16,7 +16,12 @@
     "tabWidth": 4,
     "semi": true,
     "singleQuote": false,
-    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "plugins": [
+        "@trivago/prettier-plugin-sort-imports",
+        "prettier-plugin-tailwindcss"
+    ],
+    "tailwindStylesheet": "./src/app/globals.css",
+    "tailwindFunctions": ["cn", "cva"],
     "overrides": [
         {
             "files": ["*.yml", "*.yaml"],
