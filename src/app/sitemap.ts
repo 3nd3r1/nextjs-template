@@ -2,7 +2,9 @@ import type { MetadataRoute } from "next";
 
 import { siteConfig } from "@/lib/config";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    "use cache";
+
     return [
         {
             url: siteConfig.url,
