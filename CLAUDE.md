@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+@AGENTS.md
+
 ## About
 
 This is a Next.js template that can be modified for any project. Update `src/lib/config.ts` with your site details to get started.
