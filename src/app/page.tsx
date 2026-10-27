@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -86,18 +86,17 @@ export default function Home() {
                 </div>
 
                 <div className="flex justify-center gap-4">
-                    <Button asChild>
-                        <Link href="/about">About</Link>
-                    </Button>
-                    <Button variant="outline" asChild>
-                        <a
-                            href="https://github.com/3nd3r1/nextjs-template"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            GitHub
-                        </a>
-                    </Button>
+                    <Link href="/about" className={buttonVariants()}>
+                        About
+                    </Link>
+                    <a
+                        href="https://github.com/3nd3r1/nextjs-template"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={buttonVariants({ variant: "outline" })}
+                    >
+                        GitHub
+                    </a>
                 </div>
             </div>
         </main>

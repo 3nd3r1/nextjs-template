@@ -25,6 +25,8 @@ Add shadcn components: `npx shadcn@latest add [component]`
 
 This project uses shadcn/ui for UI components. Always prefer shadcn components over custom implementations when a suitable component exists. Browse available components at [ui.shadcn.com](https://ui.shadcn.com). Components are installed to `src/components/ui/` and can be customized after installation.
 
+Components use the `base-nova` style, built on Base UI (not Radix). Compose with the `render` prop instead of `asChild`. For links that look like buttons, style the link with `buttonVariants()` rather than wrapping it in `Button`.
+
 ## Folder Structure
 
 ```

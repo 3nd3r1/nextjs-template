@@ -11,12 +11,12 @@ import ThemeProvider from "@/components/common/layouts/theme-provider";
 import "./globals.css";
 
 const geistSans = Geist({
-    variable: "--font-geist-sans",
+    variable: "--font-sans",
     subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+    variable: "--font-mono",
     subsets: ["latin"],
 });
 
@@ -71,7 +71,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang={siteConfig.language} suppressHydrationWarning>
+        <html
+            lang={siteConfig.language}
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            suppressHydrationWarning
+        >
             <head>
                 <script
                     type="application/ld+json"
@@ -80,9 +84,7 @@ export default function RootLayout({
                     }}
                 />
             </head>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+            <body>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="dark"

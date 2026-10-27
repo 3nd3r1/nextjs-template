@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -149,9 +149,9 @@ tests/
                     </CardContent>
                 </Card>
 
-                <Button asChild>
-                    <Link href="/">Back to Home</Link>
-                </Button>
+                <Link href="/" className={buttonVariants()}>
+                    Back to Home
+                </Link>
             </div>
         </main>
     );
