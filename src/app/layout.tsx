@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Noto_Sans, Playfair_Display } from "next/font/google";
 
 import { siteConfig } from "@/lib/config";
+import { cn } from "@/lib/utils";
 
 import { Toaster } from "@/components/ui/sonner";
 
@@ -10,8 +11,13 @@ import ThemeProvider from "@/components/common/layouts/theme-provider";
 
 import "./globals.css";
 
-const geistSans = Geist({
+const notoSans = Noto_Sans({
     variable: "--font-sans",
+    subsets: ["latin"],
+});
+
+const playfairDisplay = Playfair_Display({
+    variable: "--font-heading",
     subsets: ["latin"],
 });
 
@@ -69,7 +75,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     return (
         <html
             lang={siteConfig.language}
-            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+            className={cn(
+                notoSans.variable,
+                playfairDisplay.variable,
+                geistMono.variable,
+                "h-full font-sans antialiased"
+            )}
             suppressHydrationWarning
         >
             <head>
