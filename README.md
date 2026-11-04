@@ -73,4 +73,5 @@ To change the colors:
 To change fonts or the component style as well, run
 `npx shadcn@latest apply <code>` instead.
 
-The PWA manifest takes its colors from `globals.css`, so it updates on its own.
+The PWA manifest, OG images and browser theme color take their colors from
+`globals.css`, so they update on their own.

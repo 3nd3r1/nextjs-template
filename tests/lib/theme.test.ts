@@ -36,6 +36,7 @@ describe("getThemeColors", () => {
     it("should read hex colors from globals.css", () => {
         const colors = getThemeColors();
         expect(colors.primary).toMatch(/^#[0-9a-f]{6}$/);
+        expect(colors.primaryForeground).toMatch(/^#[0-9a-f]{6}$/);
         expect(colors.background).toMatch(/^#[0-9a-f]{6}$/);
     });
 });

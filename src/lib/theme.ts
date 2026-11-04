@@ -49,6 +49,7 @@ export function getThemeColors() {
     const css = readFileSync(GLOBALS_CSS, "utf8");
     return {
         primary: oklchToHex(getCssVar(css, "primary")),
+        primaryForeground: oklchToHex(getCssVar(css, "primary-foreground")),
         background: oklchToHex(getCssVar(css, "background")),
     };
 }
