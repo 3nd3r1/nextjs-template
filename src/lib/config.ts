@@ -7,9 +7,7 @@ export const siteConfig: SiteConfig = {
     description: "A brief description of your application",
     url: "https://example.com",
 
-    // Branding - UPDATE THESE
-    themeColor: "#000000",
-    backgroundColor: "#000000",
+    // Locale - UPDATE THESE
     locale: "en_US",
     language: "en",
 

@@ -28,6 +28,7 @@ npm run test         # Run tests
 npm run test:watch   # Run tests in watch mode
 npm run coverage     # Run tests with coverage
 npm run type-check   # TypeScript type checking
+npm run theme -- <code>  # Apply shadcn preset colors
 ```
 
 ## Structure
@@ -58,3 +59,21 @@ npx shadcn@latest add card
 ```
 
 Components are added to `src/components/ui/`.
+
+## Theme
+
+The default theme is shadcn's Sera style with a neutral base color and a purple
+primary (preset `b4pl265ewS`). Colors live as CSS variables in
+`src/app/globals.css`.
+
+To change them:
+
+1. Open [ui.shadcn.com/create?preset=b4pl265ewS](https://ui.shadcn.com/create?preset=b4pl265ewS)
+2. Pick a base color, theme and chart color, then copy the preset code
+3. Run `npm run theme -- <code>`
+
+This only updates colors. To also change fonts or the component style, run
+`npx shadcn@latest apply <code>` instead.
+
+The PWA manifest reads `--primary` and `--background` from `globals.css`, so it
+picks up the new colors automatically.

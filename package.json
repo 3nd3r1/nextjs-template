@@ -13,6 +13,7 @@
         "test:watch": "vitest",
         "coverage": "vitest run --coverage",
         "type-check": "next typegen && tsc --noEmit",
+        "theme": "f() { shadcn apply \"$@\" --only theme --yes && prettier --write components.json src/app/globals.css; }; f",
         "docker:dev": "docker compose up frontend",
         "docker:build": "docker compose build frontend",
         "docker:down": "docker compose down"
