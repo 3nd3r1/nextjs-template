@@ -38,15 +38,17 @@ export default function About() {
                     <CardContent>
                         <pre className="overflow-x-auto bg-muted p-4 text-sm">
                             {`src/
-├── app/           # Pages and API routes
-├── components/ui/ # shadcn/ui components
-├── lib/           # Utilities and config
-└── validators/    # Zod schemas
+├── app/             # Pages, API routes and metadata files
+├── components/
+│   ├── common/      # Shared custom components
+│   └── ui/          # shadcn/ui components
+├── lib/
+│   ├── config.ts    # Site details
+│   ├── theme.ts     # Reads theme colors for the manifest
+│   └── utils.ts     # cn helper
+└── validators/      # Zod schemas
 
-tests/
-├── api/           # API route tests
-├── components/    # Component tests
-└── lib/           # Utility tests`}
+tests/               # Mirrors src/`}
                         </pre>
                     </CardContent>
                 </Card>
@@ -68,7 +70,26 @@ tests/
                             </p>
                         </div>
                         <div>
-                            <p className="font-medium">2. Add components</p>
+                            <p className="font-medium">2. Pick a theme</p>
+                            <p className="text-sm text-muted-foreground">
+                                Build a preset on{" "}
+                                <a
+                                    href="https://ui.shadcn.com/create?preset=b4pl265hL6"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline underline-offset-4"
+                                >
+                                    ui.shadcn.com/create
+                                </a>{" "}
+                                and run{" "}
+                                <code className="bg-muted px-1">
+                                    npm run theme -- [code]
+                                </code>{" "}
+                                to apply its colors.
+                            </p>
+                        </div>
+                        <div>
+                            <p className="font-medium">3. Add components</p>
                             <p className="text-sm text-muted-foreground">
                                 Run{" "}
                                 <code className="bg-muted px-1">
@@ -78,7 +99,7 @@ tests/
                             </p>
                         </div>
                         <div>
-                            <p className="font-medium">3. Create pages</p>
+                            <p className="font-medium">4. Create pages</p>
                             <p className="text-sm text-muted-foreground">
                                 Add folders in{" "}
                                 <code className="bg-muted px-1">src/app/</code>{" "}
@@ -88,7 +109,7 @@ tests/
                             </p>
                         </div>
                         <div>
-                            <p className="font-medium">4. Add API routes</p>
+                            <p className="font-medium">5. Add API routes</p>
                             <p className="text-sm text-muted-foreground">
                                 Create{" "}
                                 <code className="bg-muted px-1">route.ts</code>{" "}
@@ -138,6 +159,18 @@ tests/
                                     npm run format
                                 </span>{" "}
                                 - Format code
+                            </p>
+                            <p>
+                                <span className="text-muted-foreground">
+                                    npm run type-check
+                                </span>{" "}
+                                - Check types
+                            </p>
+                            <p>
+                                <span className="text-muted-foreground">
+                                    npm run theme -- [code]
+                                </span>{" "}
+                                - Apply theme colors
                             </p>
                         </div>
                     </CardContent>

@@ -61,12 +61,12 @@ Add shadcn components with `npx shadcn@latest add <component>`. They go into
 ## Theme
 
 The theme is shadcn's Sera style with neutral grays and a purple primary color.
-Its preset code is `b4pl265ewS`. The colors are CSS variables in
-`src/app/globals.css`.
+Text is Geist and headings are Playfair Display. Its preset code is
+`b4pl265hL6`. The colors are CSS variables in `src/app/globals.css`.
 
 To change the colors:
 
-1. Open [ui.shadcn.com/create?preset=b4pl265ewS](https://ui.shadcn.com/create?preset=b4pl265ewS)
+1. Open [ui.shadcn.com/create?preset=b4pl265hL6](https://ui.shadcn.com/create?preset=b4pl265hL6)
 2. Pick new colors and copy the preset code
 3. Run `npm run theme -- <code>`
 

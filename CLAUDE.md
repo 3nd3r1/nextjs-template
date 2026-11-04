@@ -30,7 +30,7 @@ This project uses shadcn/ui for UI components. Always prefer shadcn components o
 
 Components use the `base-sera` style, built on Base UI (not Radix). Compose with the `render` prop instead of `asChild`. For links that look like buttons, style the link with `buttonVariants()` rather than wrapping it in `Button`.
 
-Theme colors are CSS variables in `src/app/globals.css`, generated from a shadcn preset code (default `b4pl265ewS`: Sera, neutral base, purple theme). Change them with `npm run theme -- <code>` rather than editing by hand; `npx shadcn preset decode <code>` shows what a code contains. The manifest, OG images and viewport theme color read their colors from `globals.css` via `src/lib/theme.ts`.
+Theme colors are CSS variables in `src/app/globals.css`, generated from a shadcn preset code (default `b4pl265hL6`: Sera, neutral base, purple theme, Geist and Playfair Display). Change them with `npm run theme -- <code>` rather than editing by hand; `npx shadcn preset decode <code>` shows what a code contains. The manifest, OG images and viewport theme color read their colors from `globals.css` via `src/lib/theme.ts`.
 
 ## Folder Structure
 

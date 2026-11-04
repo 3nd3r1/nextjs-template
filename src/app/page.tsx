@@ -18,8 +18,7 @@ export default function Home() {
                         Ender - Next.js Template
                     </h1>
                     <p className="text-muted-foreground">
-                        A minimal Next.js starter with React 19, Tailwind CSS 4,
-                        and shadcn/ui
+                        A Next.js starter with Tailwind CSS and shadcn/ui
                     </p>
                 </div>
 
@@ -32,40 +31,40 @@ export default function Home() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-2 text-sm">
-                            <p>Next.js with App Router</p>
-                            <p>React with Server Components</p>
-                            <p>Tailwind CSS</p>
-                            <p>TypeScript</p>
+                            <p>Next.js with Cache Components</p>
+                            <p>React Server Components</p>
+                            <p>Tailwind CSS and shadcn/ui</p>
+                            <p>TypeScript and Zod</p>
                         </CardContent>
                     </Card>
 
                     <Card>
                         <CardHeader>
-                            <CardTitle>Testing</CardTitle>
+                            <CardTitle>Theme</CardTitle>
                             <CardDescription>
-                                Ready for test-driven development
+                                shadcn Sera preset
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-2 text-sm">
-                            <p>Vitest for unit tests</p>
-                            <p>React Testing Library</p>
-                            <p>API route testing</p>
-                            <p>Component testing</p>
+                            <p>Neutral base with a purple primary</p>
+                            <p>Geist and Playfair Display</p>
+                            <p>One command to change colors</p>
+                            <p>Manifest and OG images follow it</p>
                         </CardContent>
                     </Card>
 
                     <Card>
                         <CardHeader>
-                            <CardTitle>Developer Experience</CardTitle>
+                            <CardTitle>Quality</CardTitle>
                             <CardDescription>
-                                Tools to keep code clean
+                                Checked on every push and PR
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-2 text-sm">
-                            <p>ESLint with Next.js config</p>
+                            <p>Vitest and React Testing Library</p>
+                            <p>ESLint with the Next.js config</p>
                             <p>Prettier with import sorting</p>
-                            <p>Zod for validation</p>
-                            <p>Path aliases (@/)</p>
+                            <p>Type checking with route types</p>
                         </CardContent>
                     </Card>
 
