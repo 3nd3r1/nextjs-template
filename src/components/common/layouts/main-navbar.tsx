@@ -5,8 +5,6 @@ import { usePathname } from "next/navigation";
 
 import { Library, LucideIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils";
-
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -40,12 +38,13 @@ const MainNavbar = () => {
                             <Link
                                 key={item.title}
                                 href={item.href}
-                                className={cn(
-                                    buttonVariants({ variant: "ghost" }),
-                                    item.isActive && "bg-primary/10"
-                                )}
+                                className={buttonVariants({
+                                    variant: item.isActive
+                                        ? "secondary"
+                                        : "ghost",
+                                })}
                             >
-                                <item.icon size={16} />
+                                <item.icon />
                                 <span>{item.title}</span>
                             </Link>
                         ))}

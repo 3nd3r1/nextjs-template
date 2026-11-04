@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 export default function About() {
     return (
-        <main className="flex-1 bg-background p-8">
+        <main className="flex-1 p-8">
             <div className="mx-auto max-w-4xl space-y-8">
                 <div className="space-y-2">
-                    <h1 className="text-4xl font-bold tracking-tight">
+                    <h1 className="font-heading text-4xl">
                         About This Template
                     </h1>
                     <p className="text-muted-foreground">
@@ -36,7 +36,7 @@ export default function About() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+                        <pre className="overflow-x-auto bg-muted p-4 text-sm">
                             {`src/
 ├── app/           # Pages and API routes
 ├── components/ui/ # shadcn/ui components
@@ -61,7 +61,7 @@ tests/
                             <p className="font-medium">1. Update site config</p>
                             <p className="text-sm text-muted-foreground">
                                 Edit{" "}
-                                <code className="rounded bg-muted px-1">
+                                <code className="bg-muted px-1">
                                     src/lib/config.ts
                                 </code>{" "}
                                 with your site name, URL, and author info.
@@ -71,7 +71,7 @@ tests/
                             <p className="font-medium">2. Add components</p>
                             <p className="text-sm text-muted-foreground">
                                 Run{" "}
-                                <code className="rounded bg-muted px-1">
+                                <code className="bg-muted px-1">
                                     npx shadcn@latest add [component]
                                 </code>{" "}
                                 to add UI components.
@@ -81,13 +81,9 @@ tests/
                             <p className="font-medium">3. Create pages</p>
                             <p className="text-sm text-muted-foreground">
                                 Add folders in{" "}
-                                <code className="rounded bg-muted px-1">
-                                    src/app/
-                                </code>{" "}
+                                <code className="bg-muted px-1">src/app/</code>{" "}
                                 with a{" "}
-                                <code className="rounded bg-muted px-1">
-                                    page.tsx
-                                </code>{" "}
+                                <code className="bg-muted px-1">page.tsx</code>{" "}
                                 file.
                             </p>
                         </div>
@@ -95,11 +91,9 @@ tests/
                             <p className="font-medium">4. Add API routes</p>
                             <p className="text-sm text-muted-foreground">
                                 Create{" "}
-                                <code className="rounded bg-muted px-1">
-                                    route.ts
-                                </code>{" "}
+                                <code className="bg-muted px-1">route.ts</code>{" "}
                                 files in{" "}
-                                <code className="rounded bg-muted px-1">
+                                <code className="bg-muted px-1">
                                     src/app/api/
                                 </code>{" "}
                                 folders.
