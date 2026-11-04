@@ -18,13 +18,22 @@ describe("oklchToHex", () => {
 });
 
 describe("getCssVar", () => {
-    const css = `
-        :root { --primary: oklch(0.5 0.2 300); --background: oklch(1 0 0); }
-        .dark { --primary: oklch(0.4 0.2 300); }
-    `;
+    const css = [
+        "@custom-variant dark (&:is(.dark *));",
+        ":root { --primary: oklch(0.5 0.2 300); --background: oklch(1 0 0); }",
+        ".dark { --primary: oklch(0.4 0.2 300); }",
+    ].join("\n");
 
     it("should read light-mode values from :root", () => {
         expect(getCssVar(css, "primary")).toBe("oklch(0.5 0.2 300)");
+    });
+
+    it("should read dark-mode values from .dark", () => {
+        expect(getCssVar(css, "primary", "dark")).toBe("oklch(0.4 0.2 300)");
+    });
+
+    it("should fall back to :root in dark mode", () => {
+        expect(getCssVar(css, "background", "dark")).toBe("oklch(1 0 0)");
     });
 
     it("should throw when the variable is missing", () => {

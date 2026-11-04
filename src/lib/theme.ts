@@ -3,12 +3,24 @@ import path from "path";
 
 const GLOBALS_CSS = path.join(process.cwd(), "src/app/globals.css");
 
-// Reads a CSS variable from the light-mode :root block of globals.css
-export function getCssVar(css: string, name: string): string {
-    const root = css.match(/:root\s*{([^}]*)}/)?.[1] ?? "";
-    const value = root.match(new RegExp(`--${name}:\\s*([^;]+);`))?.[1];
-    if (!value) throw new Error(`--${name} not found in :root`);
-    return value.trim();
+export type ThemeMode = "light" | "dark";
+
+// Reads a CSS variable from globals.css. Dark mode falls back to :root for
+// variables the .dark block doesn't override.
+export function getCssVar(
+    css: string,
+    name: string,
+    mode: ThemeMode = "light"
+): string {
+    const selectors = mode === "dark" ? ["\\.dark", ":root"] : [":root"];
+    for (const selector of selectors) {
+        const block = css.match(
+            new RegExp(`^${selector}\\s*{([^}]*)}`, "m")
+        )?.[1];
+        const value = block?.match(new RegExp(`--${name}:\\s*([^;]+);`))?.[1];
+        if (value) return value.trim();
+    }
+    throw new Error(`--${name} not found for ${mode} mode`);
 }
 
 // Converts an oklch() color to hex, as PWA manifests need plain colors
@@ -45,11 +57,12 @@ export function oklchToHex(color: string): string {
     );
 }
 
-export function getThemeColors() {
+export function getThemeColors(mode: ThemeMode = "light") {
     const css = readFileSync(GLOBALS_CSS, "utf8");
+    const hex = (name: string) => oklchToHex(getCssVar(css, name, mode));
     return {
-        primary: oklchToHex(getCssVar(css, "primary")),
-        primaryForeground: oklchToHex(getCssVar(css, "primary-foreground")),
-        background: oklchToHex(getCssVar(css, "background")),
+        primary: hex("primary"),
+        primaryForeground: hex("primary-foreground"),
+        background: hex("background"),
     };
 }
